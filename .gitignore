@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+# Flutter / Dart
+hopper/build/
+hopper/.dart_tool/
+hopper/.flutter-plugins
+hopper/.flutter-plugins-dependencies
+hopper/.packages
+hopper/*.iml
+hopper/android/.gradle/
+hopper/android/local.properties
+hopper/android/key.properties
+hopper/android/app/.cxx/
+hopper/ios/Pods/
+hopper/ios/Flutter/ephemeral/
+hopper/ios/Flutter/Generated.xcconfig
+hopper/ios/Flutter/flutter_export_environment.sh
+hopper/ios/Runner.xcworkspace/xcuserdata/
+hopper/ios/Runner.xcodeproj/xcuserdata/
+hopper/macos/Pods/
+hopper/macos/Flutter/ephemeral/
+hopper/macos/Runner.xcworkspace/xcuserdata/
+hopper/macos/Runner.xcodeproj/xcuserdata/
+hopper/linux/flutter/ephemeral/
+hopper/windows/flutter/ephemeral/
+# build outputs (published as releases / on the website, not in git)
+hopper/dist/
+*.jks
+*.keystore
+
+# landing page build output + the binaries it serves (published to the VPS, not to git)
+landing/out/
+landing/public/downloads/
+landing/node_modules/
+landing/.next/
+landing-static-old/
+landing/.deploy.env
+# product spec PDFs stay local
+*.pdf
