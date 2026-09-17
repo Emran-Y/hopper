@@ -13,7 +13,7 @@ export default function Downloads() {
 
   useEffect(() => {
     setUa(navigator.userAgent);
-    fetch("/downloads/manifest.json", { cache: "no-cache" })
+    fetch("downloads/manifest.json", { cache: "no-cache" })
       .then((r) => r.json())
       .then(setM)
       .catch(() => setFailed(true));
@@ -45,7 +45,7 @@ export default function Downloads() {
                 {f.note} · {fmt(f.bytes)}
               </div>
               <div className="sha" title="SHA-256">{f.sha256}</div>
-              <a className={"btn" + (primary ? "" : " btn-ghost")} href={`/downloads/${f.file}`} download>
+              <a className={"btn" + (primary ? "" : " btn-ghost")} href={`downloads/${f.file}`} download>
                 Download
               </a>
             </div>

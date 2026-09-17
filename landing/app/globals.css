@@ -80,7 +80,8 @@ code { font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monos
 /* stage: laptop + phone + beams */
 .stage { position: relative; max-width: 1080px; margin: 50px auto 0; padding: 0 clamp(8px, 2vw, 24px); }
 .stage-grid { display: grid; grid-template-columns: 1.55fr .75fr; gap: clamp(20px, 5vw, 70px); align-items: end; }
-@media (max-width: 800px) { .stage-grid { grid-template-columns: 1fr; justify-items: center; } .beam { display: none; } }
+.stage-grid > div { min-width: 0; width: 100%; }
+@media (max-width: 800px) { .stage-grid { grid-template-columns: 1fr; gap: 28px; } .beam { display: none; } .phone { margin: 0 auto; } }
 .stage-floor { position: absolute; left: 10%; right: 10%; bottom: -10px; height: 120px; background: radial-gradient(50% 100% at 50% 100%, rgba(255,106,61,.28), transparent 70%); filter: blur(24px); z-index: -1; }
 .beam { position: absolute; left: 58%; right: 22%; top: 42%; height: 2px; z-index: 2;
   background: linear-gradient(90deg, transparent, var(--accent2), var(--cyan), transparent); opacity: .7; filter: drop-shadow(0 0 8px var(--glow)); }
@@ -89,7 +90,7 @@ code { font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monos
 @keyframes travel { 0% { left: 0; opacity: 0 } 10% { opacity: 1 } 45% { left: calc(100% - 12px); opacity: 1 } 50% { opacity: 0 } 55% { left: calc(100% - 12px); opacity: 1 } 90% { left: 0; opacity: 1 } 100% { opacity: 0 } }
 
 /* laptop mockup */
-.laptop { width: 100%; position: relative; }
+.laptop { width: 100%; position: relative; container-type: inline-size; }
 .laptop .lid { position: relative; border-radius: 18px 18px 6px 6px; padding: 12px 12px 18px; background: linear-gradient(180deg, #2a3142, #151a26);
   border: 1px solid var(--line2); box-shadow: 0 40px 90px -30px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.12); }
 .laptop .cam { position: absolute; top: 4px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #0a0e17; box-shadow: inset 0 0 0 1px #2c3446; }
@@ -105,24 +106,23 @@ code { font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monos
 .phone .screen { border-radius: 34px; overflow: hidden; background: #0e1420; aspect-ratio: 9 / 19.5; position: relative; }
 .phone .screen img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .phone .hole { position: absolute; top: 12px; left: 50%; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: #05080f; box-shadow: 0 0 0 2px rgba(0,0,0,.6); z-index: 2; }
-.phone-label, .laptop-label { text-align: center; color: var(--dim); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-top: 16px; }
 
-/* mock mac UI (used until real captures are dropped in) */
-.macui { position: absolute; inset: 0; display: grid; grid-template-columns: 148px 1fr; font-size: 9px; color: var(--text); }
-.macui .side { background: #111827; border-right: 1px solid var(--line); padding: 14px 10px; }
-.macui .side .b { display: flex; align-items: center; gap: 6px; font-weight: 800; font-size: 11px; margin-bottom: 14px; }
-.macui .side .b i { width: 16px; height: 16px; border-radius: 4px; background: var(--accent); display: inline-block; }
-.macui .side .it { padding: 6px 8px; border-radius: 6px; color: var(--muted); font-weight: 600; margin-bottom: 2px; }
+/* mock mac UI (used until real captures are dropped in) — sized in container units so it scales */
+.macui { position: absolute; inset: 0; display: grid; grid-template-columns: 23% 1fr; font-size: clamp(4px, 1.15cqw, 10px); color: var(--text); }
+.macui .side { background: #111827; border-right: 1px solid var(--line); padding: 1.6em 1.1em; }
+.macui .side .b { display: flex; align-items: center; gap: .6em; font-weight: 800; font-size: 1.2em; margin-bottom: 1.4em; }
+.macui .side .b i { width: 1.5em; height: 1.5em; border-radius: .35em; background: var(--accent); display: inline-block; }
+.macui .side .it { padding: .65em .9em; border-radius: .6em; color: var(--muted); font-weight: 600; margin-bottom: .2em; }
 .macui .side .it.on { background: rgba(255,106,61,.18); color: var(--accent2); }
-.macui .side .st { margin-top: 90px; color: var(--dim); font-size: 8px; }
-.macui .main { padding: 16px 18px; background: #0e1420; }
-.macui .title { font-size: 15px; font-weight: 800; margin-bottom: 12px; letter-spacing: -.02em; }
-.macui .card { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; background: var(--card); }
+.macui .side .st { margin-top: 9em; color: var(--dim); font-size: .9em; }
+.macui .main { padding: 1.7em 2em; background: #0e1420; }
+.macui .title { font-size: 1.7em; font-weight: 800; margin-bottom: .7em; letter-spacing: -.02em; }
+.macui .card { border: 1px solid var(--line); border-radius: 1em; padding: 1em 1.3em; margin-bottom: .9em; background: var(--card); }
 .macui .card.hi { background: rgba(255,106,61,.14); border-color: rgba(255,106,61,.35); }
-.macui .card .h { font-weight: 800; color: var(--accent2); font-size: 10px; margin-bottom: 2px; }
+.macui .card .h { font-weight: 800; color: var(--accent2); font-size: 1.1em; margin-bottom: .25em; }
 .macui .card .h.w { color: var(--text); }
-.macui .card .t { color: var(--muted); }
-.macui .pill { display: inline-block; font-size: 7px; padding: 2px 6px; border-radius: 999px; background: rgba(255,106,61,.2); color: var(--accent2); font-weight: 800; margin-top: 4px; }
+.macui .card .t { color: var(--muted); line-height: 1.45; }
+.macui .pill { display: inline-block; font-size: .8em; padding: .25em .7em; border-radius: 999px; background: rgba(255,106,61,.2); color: var(--accent2); font-weight: 800; margin-top: .5em; }
 
 /* feature grid */
 .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }

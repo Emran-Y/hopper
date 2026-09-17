@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Downloads from "@/components/Downloads";
 import Reveal from "@/components/Reveal";
 import { Laptop, Phone } from "@/components/Devices";
@@ -13,7 +12,7 @@ export default function Home() {
 
       <header className="nav">
         <a className="brand" href="#top">
-          <Image src="/assets/icon.png" alt="" width={28} height={28} />
+          <img src="assets/icon.png" alt="" width={28} height={28} />
           <span>Hopper</span>
         </a>
         <nav>
@@ -50,11 +49,11 @@ export default function Home() {
             <div className="stage-grid">
               <div>
                 <Laptop src={undefined} alt="Hopper on the Mac: sidebar with Home, History, Devices, Settings; the Home tab shows Syncing automatically, the last received clip and the last sent clip" />
-                <div className="laptop-label">MacBook</div>
+                
               </div>
               <div>
-                <Phone src="/assets/phone-dark.png" alt="Hopper on a Samsung Galaxy: Syncing automatically, last sent clip, paired devices" />
-                <div className="phone-label">Galaxy S26</div>
+                <Phone src="assets/phone-dark.png" alt="Hopper on a Samsung Galaxy: Syncing automatically, last sent clip, paired devices" />
+                
               </div>
             </div>
             <div className="stage-floor" aria-hidden="true" />
@@ -104,9 +103,9 @@ export default function Home() {
           <h2 className="reveal">Quiet by design</h2>
           <p className="sub reveal">The app is for pairing, history and rules. Day to day you don&apos;t see it.</p>
           <div className="gallery">
-            <div className="reveal"><Laptop src={undefined} alt="Hopper on the Mac, Home tab" /><div className="laptop-label">Mac · Home</div></div>
-            <div className="reveal"><Phone src="/assets/phone-history.png" alt="Hopper on Android: History tab with search and filters" /><div className="phone-label">History</div></div>
-            <div className="reveal"><Phone src="/assets/phone-light.png" alt="Hopper on Android, light theme" /><div className="phone-label">Light theme</div></div>
+            <div className="reveal"><Laptop src={undefined} alt="Hopper on the Mac, Home tab" /></div>
+            <div className="reveal"><Phone src="assets/phone-history.png" alt="Hopper on Android: History tab with search and filters" /></div>
+            <div className="reveal"><Phone src="assets/phone-light.png" alt="Hopper on Android, light theme" /></div>
           </div>
           <div className="grid3" style={{ marginTop: 28 }}>
             <div className="glass reveal"><h3>History</h3><p>Everything that passed through, searchable. Tap to copy again, pin what you reuse, send any old clip to a specific device.</p></div>
@@ -220,7 +219,7 @@ export default function Home() {
 
       <footer>
         <div>
-          <Image src="/assets/icon.png" alt="" width={22} height={22} /> Hopper · open source (MIT) ·{" "}
+          <img src="assets/icon.png" alt="" width={22} height={22} /> Hopper · open source (MIT) ·{" "}
           <a href={GITHUB}>github.com/Emran-Y/hopper</a> · built by Emran Yonas
         </div>
         <div>
