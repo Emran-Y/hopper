@@ -1,8 +1,6 @@
 import Downloads from "@/components/Downloads";
 import Reveal from "@/components/Reveal";
 import { Laptop, Phone } from "@/components/Devices";
-import Scene3D from "@/components/Scene3D";
-import Tilt from "@/components/Tilt";
 
 const GITHUB = "https://github.com/Emran-Y/hopper";
 
@@ -47,14 +45,16 @@ export default function Home() {
           <p className="fine">Text · links · images · files · under a second · works with the internet unplugged</p>
 
           <div className="stage">
-            <Scene3D />
+            <div className="beam" aria-hidden="true" />
             <div className="stage-grid">
-              <Tilt max={6}>
+              <div>
                 <Laptop src={undefined} alt="Hopper on the Mac: sidebar with Home, History, Devices, Settings; the Home tab shows Syncing automatically, the last received clip and the last sent clip" />
-              </Tilt>
-              <Tilt max={9}>
+                
+              </div>
+              <div>
                 <Phone src="assets/phone-dark.png" alt="Hopper on a Samsung Galaxy: Syncing automatically, last sent clip, paired devices" />
-              </Tilt>
+                
+              </div>
             </div>
             <div className="stage-floor" aria-hidden="true" />
           </div>

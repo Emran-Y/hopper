@@ -78,14 +78,17 @@ code { font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monos
 .fine { font-size: 13px; color: var(--dim); }
 
 /* stage: laptop + phone + beams */
-.stage { position: relative; max-width: 1080px; margin: 50px auto 0; padding: 40px clamp(8px, 2vw, 24px) 0; }
-.scene3d { position: absolute; inset: -18% -10% -8% -10%; z-index: 0; pointer-events: none; }
-.scene3d canvas { width: 100% !important; height: 100% !important; display: block; }
-.stage-grid { position: relative; z-index: 1; }
-.tilt { transform-style: preserve-3d; will-change: transform; width: 100%; }
+.stage { position: relative; max-width: 1080px; margin: 50px auto 0; padding: 0 clamp(8px, 2vw, 24px); }
 .stage-grid { display: grid; grid-template-columns: 1.55fr .75fr; gap: clamp(20px, 5vw, 70px); align-items: end; }
 .stage-grid > div { min-width: 0; width: 100%; }
-@media (max-width: 800px) { .stage-grid { grid-template-columns: 1fr; gap: 28px; } 
+@media (max-width: 800px) { .stage-grid { grid-template-columns: 1fr; gap: 28px; } .beam { display: none; } .phone { margin: 0 auto; } }
+.stage-floor { position: absolute; left: 10%; right: 10%; bottom: -10px; height: 120px; background: radial-gradient(50% 100% at 50% 100%, rgba(255,106,61,.28), transparent 70%); filter: blur(24px); z-index: -1; }
+.beam { position: absolute; left: 58%; right: 22%; top: 42%; height: 2px; z-index: 2;
+  background: linear-gradient(90deg, transparent, var(--accent2), var(--cyan), transparent); opacity: .7; filter: drop-shadow(0 0 8px var(--glow)); }
+.beam::after { content: ""; position: absolute; top: -5px; width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: 0 0 18px 4px var(--glow);
+  animation: travel 2.6s cubic-bezier(.5,0,.5,1) infinite; }
+@keyframes travel { 0% { left: 0; opacity: 0 } 10% { opacity: 1 } 45% { left: calc(100% - 12px); opacity: 1 } 50% { opacity: 0 } 55% { left: calc(100% - 12px); opacity: 1 } 90% { left: 0; opacity: 1 } 100% { opacity: 0 } }
+
 /* laptop mockup */
 .laptop { width: 100%; position: relative; container-type: inline-size; }
 .laptop .lid { position: relative; border-radius: 18px 18px 6px 6px; padding: 12px 12px 18px; background: linear-gradient(180deg, #2a3142, #151a26);
