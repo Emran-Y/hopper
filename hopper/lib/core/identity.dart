@@ -46,8 +46,17 @@ class Identity {
 
   static String get defaultDeviceName {
     try {
+      // macOS: the friendly name from System Settings ("Emran's MacBook Pro"), not the
+      // DNS hostname, which on some networks is just the IP address.
+      if (Platform.isMacOS) {
+        final r = Process.runSync('scutil', ['--get', 'ComputerName']);
+        final n = (r.stdout as String).trim();
+        if (r.exitCode == 0 && n.isNotEmpty) return n;
+      }
+    } catch (_) {}
+    try {
       final h = Platform.localHostname;
-      if (h.isNotEmpty && h != 'localhost') return h;
+      if (h.isNotEmpty && h != 'localhost' && !RegExp(r'^\d+[.\d]*$').hasMatch(h)) return h.replaceAll('.local', '');
     } catch (_) {}
     return switch (platformName) {
       'android' => 'Android phone',
