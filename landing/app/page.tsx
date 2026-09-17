@@ -29,13 +29,13 @@ export default function Home() {
       <main id="top">
         {/* ------------------------------------------------------------ hero */}
         <section className="hero">
-          <span className="eyebrow"><span className="dot" /> Free · open source · Mac + Samsung</span>
+          <span className="eyebrow"><span className="dot" /> Free · open source · Mac + Android</span>
           <h1>
             Copy here.<br />
             <span className="grad">Paste there.</span>
           </h1>
           <p className="lead">
-            One clipboard across your Mac and your Samsung. Copy on one, paste on the other. Nothing to tap,
+            One clipboard across your Mac and your Android phone. Copy on one, paste on the other. Nothing to tap,
             nothing in the cloud, no account. Your devices talking directly over your own Wi‑Fi, end‑to‑end encrypted.
           </p>
           <div className="cta">
@@ -52,7 +52,7 @@ export default function Home() {
                 
               </div>
               <div>
-                <Phone src="assets/phone-dark.png" alt="Hopper on a Samsung Galaxy: Syncing automatically, last sent clip, paired devices" />
+                <Phone src="assets/phone-dark.png" alt="Hopper on Android: Syncing automatically, last sent clip, paired devices" />
                 
               </div>
             </div>
@@ -88,10 +88,10 @@ export default function Home() {
           <div className="grid3">
             <div className="glass reveal"><span className="num">1</span><h3>Install on each device</h3><p>The Mac app and the Android app below. Same Wi‑Fi; a phone hotspot counts too.</p></div>
             <div className="glass reveal"><span className="num">2</span><h3>Pair once with a QR code</h3><p>Mac shows a code, phone scans it. Four emoji on both screens confirm nobody got in between.</p></div>
-            <div className="glass reveal"><span className="num">3</span><h3>Copy anywhere, paste anywhere</h3><p>Copy on the Mac, long‑press → Paste on the Samsung. Copy on the Samsung, ⌘V on the Mac. Screenshots, links, files too.</p></div>
+            <div className="glass reveal"><span className="num">3</span><h3>Copy anywhere, paste anywhere</h3><p>Copy on the Mac, long‑press → Paste on the phone. Copy on the phone, ⌘V on the Mac. Screenshots, links, files too.</p></div>
           </div>
           <div className="timeline reveal" aria-label="What happens when you copy">
-            <div className="t-item"><span className="t-time">0.0 s</span><span className="t-text">You copy a link on the Samsung</span></div>
+            <div className="t-item"><span className="t-time">0.0 s</span><span className="t-text">You copy a link on your phone</span></div>
             <div className="t-item"><span className="t-time">0.1 s</span><span className="t-text">Hopper notices and encrypts it for each paired device</span></div>
             <div className="t-item"><span className="t-time">0.4 s</span><span className="t-text">It crosses your Wi‑Fi. Not a single server in between.</span></div>
             <div className="t-item"><span className="t-time">0.8 s</span><span className="t-text">It&apos;s on the Mac clipboard. ⌘V.</span></div>
@@ -120,14 +120,14 @@ export default function Home() {
           <p className="sub reveal">Honest version. Phones deliberately block apps from reading the clipboard in the background; here&apos;s what Hopper does about it.</p>
           <div className="table-wrap reveal">
             <table className="matrix">
-              <thead><tr><th></th><th>Mac</th><th>Samsung / Android</th></tr></thead>
+              <thead><tr><th></th><th>Mac</th><th>Android</th></tr></thead>
               <tbody>
                 <tr><th>Receive automatically</th><td className="ok">Yes</td><td className="ok">Yes, always on — even with the app closed or after a reboot</td></tr>
                 <tr><th>Send automatically</th><td className="ok">Yes, everything you copy</td><td className="ok">Yes, after a 2‑minute one‑time setup over USB</td></tr>
                 <tr><th>Text &amp; links</th><td className="ok">Yes</td><td className="ok">Yes</td></tr>
                 <tr><th>Images &amp; screenshots</th><td className="ok">Yes</td><td className="ok">Yes, also saved to Gallery</td></tr>
                 <tr><th>Files</th><td className="ok">Copy in Finder → sent. Received files land in Downloads/Hopper</td><td className="ok">Received into Downloads/Hopper. Send with Share → Hopper</td></tr>
-                <tr><th>Needs</th><td>macOS 12+</td><td>Android 7+ · Samsung, Pixel, anything</td></tr>
+                <tr><th>Needs</th><td>macOS 12+</td><td>Android 7+ · Samsung, Pixel, OnePlus, any brand</td></tr>
               </tbody>
             </table>
           </div>
@@ -150,7 +150,7 @@ export default function Home() {
         <section id="setup" className="section guide">
           <h2 className="reveal">Setup, start to finish</h2>
           <details className="glass reveal" open>
-            <summary>Mac + Samsung (5 minutes)</summary>
+            <summary>Mac + Android (5 minutes)</summary>
             <ol>
               <li>Install both apps (above). Put both devices on the same Wi‑Fi.</li>
               <li>
@@ -175,7 +175,7 @@ export default function Home() {
             <ul>
               <li>Same content copied twice within a few seconds is sent once. Copy something else, or wait a moment.</li>
               <li>Something that looks like a password or code is held back; tap <b>Send once</b> on the notification (phone) or the sheet (Mac), or turn the guard off in Settings.</li>
-              <li>Samsung&apos;s My Files &quot;Copy&quot; uses a private clipboard apps can&apos;t see. To send a file from the phone use <b>Share → Hopper</b>.</li>
+              <li>Some file managers (Samsung My Files, for one) copy files to a private clipboard apps can&apos;t see. To send a file from the phone use <b>Share → Hopper</b>.</li>
               <li>Guest / office Wi‑Fi often blocks device‑to‑device traffic. A phone hotspot with both devices on it always works.</li>
             </ul>
           </details>
@@ -209,7 +209,7 @@ export default function Home() {
         <section className="section faq">
           <h2 className="reveal">Questions</h2>
           <details className="glass reveal"><summary>Is it safe to install something that isn&apos;t from the App Store or Play Store?</summary><p>The warnings on the Mac (&quot;could not verify&quot;) and on Android (&quot;unknown sources&quot;) appear for <em>every</em> app that isn&apos;t distributed through Apple&apos;s or Google&apos;s store, regardless of what it does. Hopper isn&apos;t in the stores yet. Instead of trusting a store you can read the code at <a href={GITHUB}>github.com/Emran-Y/hopper</a>, compare the SHA‑256 of your download with the one shown above, and note that the app has no server to talk to.</p></details>
-          <details className="glass reveal"><summary>Is this like Apple&apos;s Universal Clipboard or Samsung&apos;s Link to Windows?</summary><p>Same idea, but across brands (a Mac and a Samsung), and without routing your clipboard through anyone&apos;s servers.</p></details>
+          <details className="glass reveal"><summary>Is this like Apple&apos;s Universal Clipboard or Samsung&apos;s Link to Windows?</summary><p>Same idea, but across brands (a Mac and any Android phone), and without routing your clipboard through anyone&apos;s servers.</p></details>
           <details className="glass reveal"><summary>Does it need the internet?</summary><p>No. It needs the devices to reach each other on a local network: home Wi‑Fi, office Wi‑Fi, or a phone hotspot. The internet can be down.</p></details>
           <details className="glass reveal"><summary>Why does the Android setup need a USB cable?</summary><p>Because the permission Hopper needs to notice your copies can only be granted by you, through Android&apos;s developer tools. No app can ask for it. It&apos;s the same for KDE Connect and every app in this category.</p></details>
           <details className="glass reveal"><summary>How big can a clip be?</summary><p>By default images up to 25 MB and files up to 50 MB per device, adjustable in each device&apos;s rules up to 100 MB. Larger transfers are on the roadmap.</p></details>

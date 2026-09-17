@@ -6,7 +6,7 @@ d = os.path.join(root, 'dist', 'downloads')
 version = re.search(r'^version:\s*([\d.]+)', open(os.path.join(root, 'pubspec.yaml')).read(), re.M).group(1)
 meta = {
  'Hopper-Mac.zip':                ('macOS',   'Mac (Apple silicon & Intel)',        'macOS 12 or newer'),
- 'Hopper-android-arm64-v8a.apk':  ('Android', 'Android · 64-bit ARM (recommended)', 'Every phone since ~2017, incl. Samsung Galaxy'),
+ 'Hopper-android-arm64-v8a.apk':  ('Android', 'Android · 64-bit ARM (recommended)', 'Every phone since ~2017 (Samsung, Pixel, OnePlus…)'),
  'Hopper-android-armeabi-v7a.apk':('Android', 'Android · 32-bit ARM',               'Older or budget phones'),
  'Hopper-android-x86_64.apk':     ('Android', 'Android · x86_64',                   'Emulators, Chromebooks'),
  'android-setup.sh':              ('Setup',   'One-time Android setup script',      'Run once on a Mac/PC with adb, phone plugged in — enables automatic sending'),

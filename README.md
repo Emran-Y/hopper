@@ -3,14 +3,14 @@
 </p>
 
 <h1 align="center">Hopper</h1>
-<p align="center"><b>Copy here. Paste there.</b><br>One clipboard across your Mac and your Samsung — no cloud, no account, end‑to‑end encrypted, over your own Wi‑Fi.</p>
+<p align="center"><b>Copy here. Paste there.</b><br>One clipboard across your Mac and your Android phone — no cloud, no account, end‑to‑end encrypted, over your own Wi‑Fi.</p>
 <p align="center"><a href="https://hopperclip.xyz">hopperclip.xyz</a> · <a href="https://hopperclip.xyz/#download">Download</a> · <a href="hopper/docs/SETUP_MAC_IPHONE_SAMSUNG.md">Setup guide</a> · <a href="hopper/docs/ARCHITECTURE.md">How it works</a></p>
 
 ---
 
 Copy on the Mac, long‑press → Paste on the phone. Copy on the phone, ⌘V on the Mac. Text, links, images and files. Nothing to tap after the one‑time pairing, and nothing leaves your network: there is no Hopper server.
 
-| | Mac | Samsung / Android | iPhone |
+| | Mac | Android | iPhone |
 |---|---|---|---|
 | Receive automatically | ✅ | ✅ always on, even with the app closed | while the app is open |
 | Send automatically | ✅ | ✅ after a one‑time setup | opening the app sends what's new; Apple's Universal Clipboard covers iPhone ↔ Mac |
