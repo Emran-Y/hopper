@@ -38,7 +38,7 @@ export default function Downloads() {
           const primary =
             (isMac && f.platform === "macOS") || ((isAndroid || !isMac) && f.file.includes("arm64"));
           return (
-            <div key={f.file} className={"dl" + (primary ? " primary" : "")}>
+            <div key={f.file} className={"glass dl" + (primary ? " primary" : "")}>
               <div className="plat">{f.platform}</div>
               <h3>{f.label}</h3>
               <div className="meta">
