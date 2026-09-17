@@ -196,7 +196,7 @@ export default function Home() {
           <h2 className="reveal">What&apos;s next</h2>
           <p className="sub reveal">Where this is going, in rough order.</p>
           <div className="grid3">
-            <div className="glass reveal"><span className="tag hot">next</span><h3>iPhone</h3><p>The iPhone app exists and works with the Mac; it ships once the App Store side is sorted. Until then Apple&apos;s Universal Clipboard covers iPhone ↔ Mac and Hopper relays to the Samsung.</p></div>
+            <div className="glass reveal"><span className="tag hot">next</span><h3>iPhone</h3><p>The iPhone app exists and works with the Mac; it ships once the App Store side is sorted. Until then Apple&apos;s Universal Clipboard covers iPhone ↔ Mac and Hopper relays to your Android phone.</p></div>
             <div className="glass reveal"><span className="tag hot">next</span><h3>Play Store &amp; notarised Mac app</h3><p>Install from the store: no &quot;unknown sources&quot;, no Open Anyway.</p></div>
             <div className="glass reveal"><span className="tag">soon</span><h3>Windows &amp; Linux</h3><p>Same code, same protocol; the desktop app already runs on both. Builds and installers are the missing piece.</p></div>
             <div className="glass reveal"><span className="tag">soon</span><h3>Big files</h3><p>Chunked, resumable transfers with an accept step, so a 500 MB video doesn&apos;t surprise anyone.</p></div>
